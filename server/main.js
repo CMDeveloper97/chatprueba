@@ -3,10 +3,10 @@
 // var server = require('http').Server(app);
 // var io = require('socket.io')(server);
 
-var app = express();
-var http = require('http');
-var server = http.createServer(app);
-io = require('socket.io').listen(server);
+
+var express = require('express')();
+var server = require('http').Server(express);
+var io = require('socket.io')(server);
 
 var mensajes = [{
     id:0,
