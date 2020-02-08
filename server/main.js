@@ -5,7 +5,7 @@
 
 
 var express = require('express')();
-var app = require('http').Server(express);
+var server = require('http').Server(express);
 var io = require('socket.io')(server);
 
 var mensajes = [{
