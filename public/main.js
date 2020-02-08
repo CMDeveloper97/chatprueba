@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-var socket = io.connect('https://35.238.134.247', {'forceNew' : true});
+var socket = io.connect('https://35.238.134.247:2000', {'forceNew' : true});
 
 socket.on('messages', function(data){
     render(data);
