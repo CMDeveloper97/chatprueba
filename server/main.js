@@ -31,4 +31,3 @@ io.on('connection',function(socket){
 server.listen(2000, () => {
     console.log("Servidor funcionando");
 });
-
