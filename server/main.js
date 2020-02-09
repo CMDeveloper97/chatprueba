@@ -1,7 +1,14 @@
 var express = require('express');
 var app = express();
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+var https = require('https');
+const fs = require('fs');
+
+const secureServer = https.createServer({
+    key: fs.readFileSync('./server.key'),
+    cert: fs.readFileSync('./server.cert')
+    }, app);
+
+var io = require('socket.io')(secureServer);
 
 var mensajes = [{
     id:0,
@@ -28,6 +35,7 @@ io.on('connection',function(socket){
 
 
 
-server.listen(2000, () => {
+secureServer.listen(2000, () => {
     console.log("Servidor funcionando");
 });
+
